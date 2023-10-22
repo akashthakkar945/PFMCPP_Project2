@@ -15,15 +15,14 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+ int
+ float
+ bool
+ double
+ char
+ unsigned int
+
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -64,10 +63,32 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
 
+    int myNumber = 23;
+    int vehicleSpeed = 42;
+    int ammoInWeapon = 10;
+
+    float pi = 3.14f; 
+    float gravity = 9.81f;
+    float localTemperature = 23.4f;
+
+    bool isAlive = true;
+    bool isDead = false;
+    bool isOn = true;
+
+    double heightOfPlayer = 6.23562;
+    double distance = 95.3290592;
+    double weight = 92.34242;
+
+    char letter = 'q';
+    char grade = 'A';
+    char color = 'R';
+
+    unsigned int health = 100;
+    unsigned int weaponDamage = 97;
+    unsigned int armor = 12;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, myNumber, vehicleSpeed, ammoInWeapon, pi, gravity, localTemperature, isAlive, isDead, isOn, heightOfPlayer, distance, weight, letter, grade, color, health, weaponDamage, armor); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,42 +105,91 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int findBiggerNumber(int num1, int num2)
+{
+    ignoreUnused(num1, num2);
+    return {};    
+}
 
 /*
  2)
  */
+int storeRandomNumber(int min, int max)
+{
+    ignoreUnused(min, max);
+    return {};
+}
 
 /*
  3)
  */
+bool buyGun(int ammo, int bullets, double gunWeight = 0.5443)
+{
+    ignoreUnused(ammo, bullets);
+    return {};
+}
 
 /*
  4)
  */
+bool checkForFoodExpiration(int daysLeft, char foodGrade, bool isExpired)
+{
+    ignoreUnused(daysLeft, foodGrade, isExpired);
+    return {};
+}
 
 /*
  5)
  */
+char findMiddleLetter(char firstLetter, char secondLetter, char thirdLetter, bool isMiddle = false)
+{
+    ignoreUnused(firstLetter, secondLetter, thirdLetter, isMiddle);
+    return {};
+}
 
 /*
  6)
  */
+void createNewAccount(int creditScore, float creditLimit, float creditUsed, int creditRemaining, bool isAccountActive = true)
+{
+    ignoreUnused(creditScore, creditLimit, creditUsed, creditRemaining, isAccountActive);
+}
 
 /*
  7)
  */
+float calculateGPA(int grade1, int grade2, int grade3, int grade4, int grade5, float gpaWeight = 4.0f)
+{
+    ignoreUnused(grade1, grade2, grade3, grade4, grade5, gpaWeight);
+    return{};
+}
 
 /*
  8)
  */
+unsigned int multiplyNumbers(unsigned int num1, unsigned int num2)
+{
+    ignoreUnused(num1, num2);
+    return {};
+}
 
 /*
  9)
  */
+void createObjectDimensions(float length, float width, float height, float weight, float volume, float surfaceArea = 0.5f)
+{
+    ignoreUnused(length, width, height, weight, volume, surfaceArea);
+}
 
 /*
  10)
  */
+
+float startNewGame(float health, float damage, float armor, float healing, float healingAmount = 0.5f, int magicType = 3, char magicTypeLetter = 'A')
+{
+    ignoreUnused(health, damage, armor, healing, healingAmount, magicType, magicTypeLetter);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +211,37 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+    auto findBigger = findBiggerNumber(6, 9);
     
     //2)
+    auto storeRandom = storeRandomNumber(4, 25);
     
     //3)
+    auto gun = buyGun(20, 30);
     
     //4)
+    auto foodExpired = checkForFoodExpiration(7, 'A', true);
     
     //5)
+    auto middleLetter = findMiddleLetter('A', 'B', 'C');
     
     //6)
+    createNewAccount(800, 5000, 2000, 3000, false);
     
     //7)
+    auto gpa = calculateGPA(90, 80, 70, 60, 50, 3.2f);
     
     //8)
+    auto multiply = multiplyNumbers(6, 8);
     
     //9)
+    createObjectDimensions(2.5f, 4.5f, 5.5f, 6.5f, 7.5f, 8.5f);
     
     //10)
+    auto game = startNewGame(100, 50, 30, 20, 1.5f);
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, gun, foodExpired, middleLetter, gpa, multiply, game);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
