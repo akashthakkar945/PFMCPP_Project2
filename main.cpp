@@ -125,7 +125,7 @@ int storeRandomNumber(int min, int max)
  */
 bool buyGun(int ammo, int bullets, double gunWeight = 0.5443)
 {
-    ignoreUnused(ammo, bullets);
+    ignoreUnused(ammo, bullets, gunWeight);
     return {};
 }
 
@@ -241,7 +241,7 @@ int main()
     auto game = startNewGame(100, 50, 30, 20, 1.5f);
     
     
-    ignoreUnused(carRented, gun, foodExpired, middleLetter, gpa, multiply, game);
+    ignoreUnused(carRented, findBigger, storeRandom, gun, foodExpired, middleLetter, gpa, multiply, game);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
